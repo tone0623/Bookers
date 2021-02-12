@@ -1,7 +1,17 @@
 <!-- ホーム画面 -->
-<h2>ようこそBookersへ！</h2>
-<p>Bookers では、さまざまな書籍に関するあなたの意見や</p>
-<p>印象を共有し交換することができます</p>
+<body>
 
-<!-- 一覧画面へ遷移 -->
-<%= link_to "start", books_path %>
+  <h1 class = "title">
+    ようこそ Bookers へ！
+  </h1>
+  <div class = "start">
+    <p><strong>Bookers</strong> では、さまざまな書籍に関するあなたの意見や</p>
+    <p>印象を共有し交換することができます</p>
+  </div>
+
+  <!-- 一覧画面へ遷移 -->
+  <div class = "start_link">
+    <%= link_to "start", books_path %>
+  </div>
+  
+</body>
