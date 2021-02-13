@@ -1,18 +1,36 @@
 <!--編集画面-->
 <h1>Editing Book</h1>
 
+<!--エラ〜メッセージの表示-->
+<% if @book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@book.errors.count, "error") %> prohibited this product from being saved:</h2>
+      <ul>
+        <% @book.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+
 <!--編集フォーム-->
 <%= form_with model:@book, local:true do |f| %>
+
+  <!--タイトル-->
   <div class = "form">
     <p class = "form-text">Title</p>
     <%= f.text_field :title %>
   </div>
-  
+
+  <!--本文-->
   <div class = "form">
     <p class = "form-text">Body</p>
       <%= f.text_area :body %>
   </div>
+
+  <!--投稿-->
   <%= f.submit 'Update Book' %>
 <% end %>
 
-<p><%= link_to "Show", book_path(@book) %> | <%= link_to "Back", books_path %></p>
+<!--画面遷移-->
+<p><span class="button"><%= link_to "Show", book_path(@book) %></span> | <%= link_to "Back", books_path %></p>

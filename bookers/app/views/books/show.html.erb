@@ -1,3 +1,4 @@
+<!--サクセスメッセージの表示-->
 <% if flash[:notice] %>
     <div class="flash">
       <div class = "successfully">
@@ -6,6 +7,7 @@
     </div>
 <% end %>
 
+<!--詳細画面-->
 <p class = "show_contents"><strong>Title:</strong> <%= @book.title %></p>
 <p class = "show_contents"><strong>Body:</strong> <%= @book.body %></p>
 <p><%= link_to "Edit", edit_book_path(@book) %> | <%= link_to "Back", books_path %></p>
